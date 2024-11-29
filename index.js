@@ -7,7 +7,7 @@ const express = require('express');
 const app = express();
 
 // Initialize bot with your token
-const BOT_TOKEN = '8178084409:AAG_89tnrDKO7etWDS5xOKzfvEL3Ztl1m-g';
+const BOT_TOKEN = '6701652400:AAHETpJXne_OoLErwK41ENt7Xg_479O9RCM';
 const bot = new TelegramBot(BOT_TOKEN, { polling: true });
 
 // File paths for storing user data
@@ -296,7 +296,7 @@ const COMMAND_TYPES = {
 // Helper to shorten links using the AdLinkFly API
 async function shortenLink(apiKey, url) {
     try {
-        const response = await axios.get(`https://maxshare.ronok.workers.dev/?link=${url}&apikey=${encodeURIComponent(apiKey)}`);
+        const response = await axios.get(`https://nanoshare.ronok.workers.dev/?link=${url}&apikey=${encodeURIComponent(apiKey)}`);
         if (response.data.url) {
             botStats.linksProcessed++;
             return response.data.url;
